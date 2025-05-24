@@ -29,3 +29,34 @@ _Horaires : 09 h 30 → 12 h 30_
 ```bash
 git clone https://github.com/votre-org/pokedex-nuxt-workshop.git
 cd pokedex-nuxt-workshop
+
+## 2. DOM JavaScript « vanilla » (09 h 45 → 10 h 15)
+
+### 2.1 Qu’est-ce que le **DOM ?**
+> **Document Object Model**  
+> Le navigateur lit votre HTML et construit un **arbre d’objets**.  
+> Chaque balise devient un *node*, chaque attribut une propriété JavaScript.
+
+| Opération | API JavaScript | Exemple |
+|-----------|---------------|---------|
+| Sélection | `document.querySelector()` | `const btn = document.querySelector('#btn')` |
+| Lecture   | `.innerText` / `.innerHTML` | `console.log(btn.innerText)` |
+| Écriture  | idem | `btn.innerText = 'Nouveau texte'` |
+| Écouteur  | `addEventListener()` | `btn.addEventListener('click', fn)` |
+
+---
+
+### 2.2 Exemple minimal : changer du texte
+```html
+<!-- Copiez/collez dans CodePen -->
+<button id="btn">Clique !</button>
+<p id="msg">Salut !</p>
+
+<script>
+  const btn = document.querySelector('#btn')   // sélection
+  const msg = document.querySelector('#msg')
+
+  btn.addEventListener('click', () => {        // écoute
+    msg.innerText = 'Texte changé 🎉'           // écriture
+  })
+</script>
